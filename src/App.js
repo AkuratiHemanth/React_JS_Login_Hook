@@ -49,7 +49,7 @@ const App = () => {
   return (
     <div>
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to={"https://github.com/AkuratiHemanth"} className="navbar-brand">
+        <Link to={{ pathname: "https://github.com/AkuratiHemanth" }} className="navbar-brand">
           Akurati Hemanth
         </Link>
         <div className="navbar-nav mr-auto">
@@ -58,76 +58,25 @@ const App = () => {
               Home
             </Link>
           </li>
-
-          {showModeratorBoard && (
-            <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
-                Moderator Board
-              </Link>
-            </li>
-          )}
-
-          {showAdminBoard && (
-            <li className="nav-item">
-              <Link to={"/admin"} className="nav-link">
-                Admin Board
-              </Link>
-            </li>
-          )}
-
-          {currentUser && (
-            <li className="nav-item">
-              <Link to={"/user"} className="nav-link">
-                User
-              </Link>
-            </li>
-          )}
+          {/* Add your Moderator and Admin Board links here */}
         </div>
-
-        {currentUser ? (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
-                {currentUser.username}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
-              </a>
-            </li>
-          </div>
-        ) : (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link to={"/register"} className="nav-link">
-                Sign Up
-              </Link>
-            </li>
-          </div>
-        )}
+        <div className="navbar-nav ml-auto">
+          {/* Add User Profile link and Logout button here */}
+        </div>
       </nav>
 
       <div className="container mt-3">
         <Routes>
-          <Route exact path={"/"} element={<Home />} />
-          <Route exact path={"/home"} element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/profile" element={<Profile />} />
-          <Route path="/user" element={<BoardUser />} />
-          <Route path="/mod" element={<BoardModerator />} />
-          <Route path="/admin" element={<BoardAdmin />} />
+          {/* Define your routes here */}
         </Routes>
       </div>
 
-      {/* <AuthVerify logOut={logOut}/> */}
+      <div className="container mt-3">
+        <button onClick={() => window.location.href = "https://www.google.com"} className="btn btn-primary">
+          Go to Google
+        </button>
+      </div>
+      
     </div>
   );
 };
