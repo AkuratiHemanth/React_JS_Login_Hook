@@ -14,9 +14,13 @@ Responsive UI: The UI is built using Bootstrap, making it responsive and visuall
 Follow these steps to get the project up and running on your local machine:
 
 Clone the repository.
+
 Install the necessary dependencies using npm install or yarn install.
+
 Update the backend API endpoints in src/services/auth.service.js to point to your backend server.
+
 Run the development server using npm start or yarn start.
+
 Access the application in your browser at http://localhost:3000.
 
 **Technologies Used**
