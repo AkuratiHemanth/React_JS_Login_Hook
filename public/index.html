@@ -22,15 +22,46 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Your React App Title</title>
     <!-- Add any additional meta tags, stylesheets, or scripts here -->
+    <style>
+      /* Add CSS for fading in content */
+      #root {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .fade-in {
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
+    <!-- Loading Spinner -->
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 24px;
+      "
+    >
+      Loading...
+    </div>
+    <div
+      id="root"
+      class="fade-in" <!-- Add class to fade in content -->
+    ></div>
     <!-- Add any preloading elements or loading spinners if desired -->
     <script>
       // You can add any custom JavaScript here if needed
+    </script>
+    <script>
+      // Add JavaScript to fade in content after loading
+      window.onload = function () {
+        document.getElementById("root").classList.add("fade-in");
+      };
     </script>
   </body>
 </html>
